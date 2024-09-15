@@ -29,27 +29,10 @@
 
 
 /* Exported typef ------------------------------------------------------------*/
-/* The following structures groups all needed parameters to be configured for the 
-   ComPort. These parameters can modified on the fly by the host through CDC class
-   command class requests. */
-typedef struct
-{
-  uint32_t bitrate;
-  uint8_t  format;
-  uint8_t  paritytype;
-  uint8_t  datatype;
-}LINE_CODING;
-
 /* Exported constants --------------------------------------------------------*/
-/* The following define is used to route the USART IRQ handler to be used.
-   The IRQ handler function is implemented in the usbd_cdc_vcp.c file. */        
-#define EVAL_COM_IRQHandler            USART1_IRQHandler 
-#define DEFAULT_CONFIG                  0
-#define OTHER_CONFIG                    1
-
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void EVAL_COM_IRQHandler(void);
+
 
 #endif /* __USBD_CDC_VCP_H */
 

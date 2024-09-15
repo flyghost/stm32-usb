@@ -23,12 +23,17 @@
 
 /* Includes ------------------------------------------------------------------ */
 #include "stm32fxxx_it.h"
-
+#include "usbd_cdc_core.h"
+#include "lcd_log.h"
 /* Private typedef ----------------------------------------------------------- */
 /* Private define ------------------------------------------------------------ */
 /* Private macro ------------------------------------------------------------- */
 /* Private variables --------------------------------------------------------- */
 /* Private function prototypes ----------------------------------------------- */
+void OTG_HS_IRQHandler(void);
+void OTG_HS_EP1_IN_IRQHandler(void);
+void OTG_HS_EP1_OUT_IRQHandler(void);
+
 extern USB_OTG_CORE_HANDLE USB_OTG_dev;
 extern uint32_t USBD_OTG_ISR_Handler(USB_OTG_CORE_HANDLE * pdev);
 

@@ -47,9 +47,15 @@
 #define USB_SIZ_DEVICE_DESC                     18
 #define USB_SIZ_STRING_LANGID                   4
 
+#if !defined (USE_STM3210C_EVAL)
 #define         DEVICE_ID1          (0x1FFF7A10)
 #define         DEVICE_ID2          (0x1FFF7A14)
 #define         DEVICE_ID3          (0x1FFF7A18)
+#else
+#define         DEVICE_ID1          (0x1FFFF7E8)
+#define         DEVICE_ID2          (0x1FFFF7EA)
+#define         DEVICE_ID3          (0x1FFFF7EC)  
+#endif
 
 #define  USB_SIZ_STRING_SERIAL       0x1A
 

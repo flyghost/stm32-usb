@@ -27,7 +27,16 @@
 #include "usbd_cdc_vcp.h"
 
 /* Private typedef ----------------------------------------------------------- */
+typedef struct
+{
+  uint32_t bitrate;
+  uint8_t  format;
+  uint8_t  paritytype;
+  uint8_t  datatype;
+}LINE_CODING;
 /* Private define ------------------------------------------------------------ */
+#define DEFAULT_CONFIG                  0
+#define OTHER_CONFIG                    1
 /* Private macro ------------------------------------------------------------- */
 /* Private variables --------------------------------------------------------- */
 LINE_CODING linecoding =

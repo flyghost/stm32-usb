@@ -23,6 +23,9 @@
 
 /* Includes ------------------------------------------------------------------ */
 #include "stm32fxxx_it.h"
+#include "usbd_cdc_core_loopback.h"
+
+// void OTG_FS_WKUP_IRQHandler(void);
 
 /* Private typedef ----------------------------------------------------------- */
 /* Private define ------------------------------------------------------------ */

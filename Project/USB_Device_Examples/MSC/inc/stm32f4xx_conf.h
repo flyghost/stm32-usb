@@ -3,7 +3,7 @@
   * @file    stm32f4xx_conf.h  
   * @author  MCD Application Team
   * @version V1.2.1
-  * @date    06-November-2015
+  * @date    17-March-2018
   * @brief   Library configuration file.
   ******************************************************************************
   * @attention

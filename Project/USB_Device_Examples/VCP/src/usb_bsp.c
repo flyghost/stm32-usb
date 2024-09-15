@@ -126,6 +126,7 @@ void USB_OTG_BSP_Init(USB_OTG_CORE_HANDLE * pdev)
 #else                           /* USE_USB_OTG_HS */
 
 #ifdef USE_ULPI_PHY             /* ULPI */
+
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB |
                            RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOH |
                            RCC_AHB1Periph_GPIOI, ENABLE);
@@ -202,7 +203,7 @@ void USB_OTG_BSP_Init(USB_OTG_CORE_HANDLE * pdev)
 
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_OTG_HS |
                            RCC_AHB1Periph_OTG_HS_ULPI, ENABLE);
-
+                           
     /* 增加USB3300 pin脚复位代码 */   
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
 
@@ -288,7 +289,6 @@ void USB_OTG_BSP_EnableInterrupt(USB_OTG_CORE_HANDLE * pdev)
 * @param  usec : Value of delay required in micro sec
 * @retval None
 */
-
 /* This value is set for SYSCLK = 168 MHZ, User can adjust this value
  * depending on used SYSCLK frequency */
 #define count_us   55

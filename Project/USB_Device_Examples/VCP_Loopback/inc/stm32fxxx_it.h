@@ -28,7 +28,6 @@
 #endif 
 
 /* Includes ------------------------------------------------------------------*/
-#include "usbd_cdc_core_loopback.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
@@ -44,8 +43,9 @@ void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
-void OTG_FS_WKUP_IRQHandler(void);
+
 void OTG_FS_IRQHandler(void);
+
 #ifdef __cplusplus
 }
 #endif
