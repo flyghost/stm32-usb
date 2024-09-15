@@ -95,25 +95,45 @@ USBD_DEVICE USR_desc =
     #endif
 #endif                          /* USB_OTG_HS_INTERNAL_DMA_ENABLED */
 /* USB Standard Device Descriptor */
+// 设别描述符
 __ALIGN_BEGIN uint8_t USBD_DeviceDesc[USB_SIZ_DEVICE_DESC] __ALIGN_END =
 {
+    // 该描述符的长度，也就是这个数组的长度，一般为18字节
     0x12,                         /* bLength */
+
+    // 设备描述符的长度，一般为1
     USB_DEVICE_DESCRIPTOR_TYPE,   /* bDescriptorType */
+
+    // USB协议版本号
     0x00,                         /* bcdUSB */
     0x02,
+
+    // 由USB-IF分配
     0x02,                         /* bDeviceClass */
     0x02,                         /* bDeviceSubClass */
     0x00,                         /* bDeviceProtocol */
+
+    // EP0的最大包长，HS设备必须是64
     USB_OTG_MAX_EP0_SIZE,         /* bMaxPacketSize */
+
+    // USB-IF分配的：0x0483
     LOBYTE(USBD_VID),             /* idVendor */
     HIBYTE(USBD_VID),             /* idVendor */
+
+    // 厂家分配的：0x5740
     LOBYTE(USBD_PID),             /* idVendor */
     HIBYTE(USBD_PID),             /* idVendor */
+
+    // 设备自身的版本号
     0x00,                         /* bcdDevice rel. 2.00 */
     0x02,
+
+    // 描述符序号
     USBD_IDX_MFC_STR,             /* Index of manufacturer string */
     USBD_IDX_PRODUCT_STR,         /* Index of product string */
     USBD_IDX_SERIAL_STR,          /* Index of serial number string */
+
+    // 该设备在当前速度下支持多少种configuration
     USBD_CFG_MAX_NUM              /* bNumConfigurations */
 };                              /* USB_DeviceDescriptor */
 
