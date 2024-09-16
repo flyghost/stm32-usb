@@ -240,7 +240,6 @@ uint32_t USBD_OTG_ISR_Handler (USB_OTG_CORE_HANDLE *pdev)
     {
       retval |= DCD_HandleUSBSuspend_ISR(pdev);
     }
-		
     if (gintr_status.b.sofintr)
     {
       retval |= DCD_HandleSof_ISR(pdev);

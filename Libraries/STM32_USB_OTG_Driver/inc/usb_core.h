@@ -249,7 +249,7 @@ typedef struct _DCD
   uint32_t       DevRemoteWakeup;
   USB_OTG_EP     in_ep   [USB_OTG_MAX_TX_FIFOS];
   USB_OTG_EP     out_ep  [USB_OTG_MAX_TX_FIFOS];
-  uint8_t        setup_packet [3*8];
+  uint8_t        setup_packet [8*3];
   USBD_Class_cb_TypeDef         *class_cb;
   USBD_Usr_cb_TypeDef           *usr_cb;
   USBD_DEVICE                   *usr_device;  
