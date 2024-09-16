@@ -554,6 +554,11 @@
               <FileType>1</FileType>
               <FilePath>../src/usbd_desc.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32_interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\stm32_interrupt.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1183,6 +1188,11 @@
               <FileName>usbd_desc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../src/usbd_desc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32_interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\stm32_interrupt.c</FilePath>
             </File>
           </Files>
         </Group>
