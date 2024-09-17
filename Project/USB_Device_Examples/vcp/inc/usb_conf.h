@@ -221,7 +221,7 @@
     #if defined   (__CC_ARM)      /* ARM Compiler */
       #define __ALIGN_BEGIN    __align(4)  
     #elif defined (__ICCARM__)    /* IAR Compiler */
-      #define __ALIGN_BEGIN 
+      #define __ALIGN_BEGIN
     #endif /* __CC_ARM */  
   #endif /* __GNUC__ */ 
 #else
@@ -234,7 +234,10 @@
   #define __packed    __packed
 #elif defined (__ICCARM__)     /* IAR Compiler */
   #define __packed    __packed
-#elif defined   ( __GNUC__ )   /* GNU Compiler */                        
+#elif defined   ( __GNUC__ )   /* GNU Compiler */ 
+#ifdef __packed
+#undef __packed
+#endif
   #define __packed    __attribute__((__packed__))
 #endif /* __CC_ARM */
 
@@ -273,7 +276,7 @@
   */ 
 
 
-#endif /* __USB_CONF__H__ */
+#endif /*__USB_CONF__H__*/
 
 
 /**

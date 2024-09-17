@@ -144,6 +144,8 @@
  #endif
  #ifdef USE_EMBEDDED_PHY 
    #define USB_OTG_EMBEDDED_PHY_ENABLED
+   /* wakeup is working only when HS core is configured in FS mode */
+   /* #define USB_OTG_HS_LOW_PWR_MGMT_SUPPORT */
  #endif
  #define USB_OTG_HS_INTERNAL_DMA_ENABLED 
 // #define USB_OTG_HS_DEDICATED_EP1_ENABLED
@@ -163,7 +165,13 @@
 #endif
 
 /****************** USB OTG MISC CONFIGURATION ********************************/
+#if defined(USE_STM324x9I_EVAL)
+/* #define VBUS_SENSING_ENABLED */
+   /* VBUS sensing is disabled because in the USART RX/TX pins are shared with USB Pins
+      PA9/PA10 in the STM324x9I_EVAL */
+#else
 //#define VBUS_SENSING_ENABLED
+#endif
 
 /****************** USB OTG MODE CONFIGURATION ********************************/
 /* #define USE_HOST_MODE */
