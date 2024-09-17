@@ -43,9 +43,9 @@
 extern uint8_t Rxbuffer[RX_BUFFER_SIZE];
 extern uint16_t USB_Rx_Cnt;
 
-__IO uint32_t data_sent;
-__IO uint32_t receive_flag = 0;
-__IO uint32_t receive_count;
+static __IO uint32_t data_sent;
+static __IO uint32_t receive_flag = 0;
+static __IO uint32_t receive_count;
 
 /* Private function prototypes ----------------------------------------------- */
 static uint16_t VCP_DataTx(void);
