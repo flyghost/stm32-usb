@@ -64,7 +64,7 @@
 #include "usbd_cdc_vcp.h"
 
 extern __ALIGN_BEGIN USB_OTG_CORE_HANDLE USB_OTG_dev __ALIGN_END;
-extern uint8_t Rxbuffer[RX_BUFFER_SIZE];
+uint8_t Rxbuffer[RX_BUFFER_SIZE];
 uint16_t USB_Rx_Cnt;
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY

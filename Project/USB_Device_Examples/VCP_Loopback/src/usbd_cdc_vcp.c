@@ -25,14 +25,27 @@
 
 /* Includes ------------------------------------------------------------------ */
 #include "usbd_cdc_vcp.h"
+#include "usbd_cdc_core_loopback.h"
+#include "usbd_usr.h"
+#include "usbd_desc.h"
+
+#ifdef USB_OTG_HS_INTERNAL_DMA_ENABLED
+    #if defined ( __ICCARM__ )      /* !< IAR Compiler */
+        #pragma data_alignment=4
+    #endif
+#endif
 
 /* Private typedef ----------------------------------------------------------- */
 /* Private define ------------------------------------------------------------ */
 /* Private macro ------------------------------------------------------------- */
 /* Private variables --------------------------------------------------------- */
+
+extern uint8_t Rxbuffer[RX_BUFFER_SIZE];
+extern uint16_t USB_Rx_Cnt;
+
 __IO uint32_t data_sent;
 __IO uint32_t receive_flag = 0;
-extern __IO uint32_t receive_count;
+__IO uint32_t receive_count;
 
 /* Private function prototypes ----------------------------------------------- */
 static uint16_t VCP_DataTx(void);
@@ -80,6 +93,15 @@ static uint16_t VCP_DataRx(uint32_t Len)
     return USBD_OK;
 }
 
+void USB_VCP_Init(USB_OTG_CORE_HANDLE * pdev)
+{
+#ifdef USE_USB_OTG_HS
+    USBD_Init(pdev, USB_OTG_HS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+#else
+    USBD_Init(pdev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+#endif
+}
+
 /* send data function */
 void VCP_SendData(USB_OTG_CORE_HANDLE * pdev, uint8_t * pbuf, uint32_t buf_len)
 {
@@ -95,5 +117,29 @@ void VCP_ReceiveData(USB_OTG_CORE_HANDLE * pdev, uint8_t * pbuf,
     receive_flag = 1;
 }
 
+bool VCP_DataReady(void)
+{
+    return receive_flag;
+}
+
+void VCP_ClearReceiveFlag(void)
+{
+    receive_flag = 0;
+}
+
+uint32_t VCP_RecvLenGet(void)
+{
+    return receive_count;
+}
+
+uint8_t * VCP_RecvBufGet(void)
+{
+    return Rxbuffer;
+}
+
+uint32_t VCP_RecvDataLenGet(void)
+{
+    return USB_Rx_Cnt;
+}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
