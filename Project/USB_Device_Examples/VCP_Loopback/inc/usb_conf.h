@@ -147,6 +147,14 @@
    /* wakeup is working only when HS core is configured in FS mode */
    /* #define USB_OTG_HS_LOW_PWR_MGMT_SUPPORT */
  #endif
+/* Be aware that enabling DMA mode will result in data being sent only by
+    multiple of 4 packet sizes. This is due to the fact that USB DMA does
+    not allow sending data from non word-aligned addresses.
+    For this specific application, it is advised to not enable this option
+    unless required. */
+// 请注意，启用DMA模式将导致数据仅以4个数据包大小的倍数发送。
+// 这是由于USB DMA不允许从非字对齐地址发送数据的事实。
+// 对于这个特定的应用程序，除非需要，否则建议不要启用该选项。
  #define USB_OTG_HS_INTERNAL_DMA_ENABLED 
 // #define USB_OTG_HS_DEDICATED_EP1_ENABLED
 /* #define USB_OTG_HS_LOW_PWR_MGMT_SUPPORT */
