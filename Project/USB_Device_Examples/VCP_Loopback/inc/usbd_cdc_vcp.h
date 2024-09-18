@@ -24,7 +24,7 @@
 #define __USBD_CDC_VCP_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "usbd_cdc_core_loopback.h"
+#include "usbd_ioreq.h"
 #include "string.h"
 #include <stdbool.h>
 /* Exported typef ------------------------------------------------------------*/

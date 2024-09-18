@@ -24,15 +24,15 @@
 #define __USBD_CDC_VCP_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "usbd_cdc_core.h"
-#include "usbd_conf.h"
-
-
+#include "usbd_ioreq.h"
+#include "string.h"
+#include <stdbool.h>
 /* Exported typef ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
+void USB_VCP_Init(USB_OTG_CORE_HANDLE * pdev);
 
 #endif /* __USBD_CDC_VCP_H */
 

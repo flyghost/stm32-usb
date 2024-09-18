@@ -25,6 +25,11 @@
 
 /* Includes ------------------------------------------------------------------ */
 #include "usbd_cdc_vcp.h"
+#include "usbd_usr.h"
+#include "usb_conf.h"
+#include "usbd_desc.h"
+#include "usbd_conf.h"
+#include "usbd_cdc_core.h"
 
 /* Private typedef ----------------------------------------------------------- */
 typedef struct
@@ -383,5 +388,15 @@ void EVAL_COM_IRQHandler(void)
         (void)USART_ReceiveData(EVAL_COM1);
     }
 }
+
+void USB_VCP_Init(USB_OTG_CORE_HANDLE * pdev)
+{
+#ifdef USE_USB_OTG_HS
+    USBD_Init(pdev, USB_OTG_HS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+#else
+    USBD_Init(pdev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+#endif
+}
+
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

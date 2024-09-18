@@ -23,61 +23,6 @@
 /* Includes ------------------------------------------------------------------ */
 #include "usb_bsp.h"
 
-/** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
-* @{
-*/
-
-/** @defgroup USB_BSP
-* @brief This file is responsible to offer board support package
-* @{
-*/
-
-/** @defgroup USB_BSP_Private_Defines
-* @{
-*/
-/**
-* @}
-*/
-
-
-/** @defgroup USB_BSP_Private_TypesDefinitions
-* @{
-*/
-/**
-* @}
-*/
-
-
-
-
-
-/** @defgroup USB_BSP_Private_Macros
-* @{
-*/
-/**
-* @}
-*/
-
-/** @defgroup USBH_BSP_Private_Variables
-* @{
-*/
-
-/**
-* @}
-*/
-
-/** @defgroup USBH_BSP_Private_FunctionPrototypes
-* @{
-*/
-/**
-* @}
-*/
-
-/** @defgroup USB_BSP_Private_Functions
-* @{
-*/
-
-
 /**
 * @brief  USB_OTG_BSP_Init
 *         Initializes BSP configurations
