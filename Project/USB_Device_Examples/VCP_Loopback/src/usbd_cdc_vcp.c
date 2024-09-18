@@ -53,8 +53,8 @@ static uint16_t VCP_DataRx(uint32_t Len);
 
 CDC_IF_Prop_TypeDef VCP_fops =
 {
-    VCP_DataTx,
-    VCP_DataRx
+    .pIf_DataTx = VCP_DataTx,
+    .pIf_DataRx = VCP_DataRx
 };
 
 /* Private functions --------------------------------------------------------- */

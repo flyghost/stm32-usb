@@ -22,43 +22,6 @@
 /* Includes ------------------------------------------------------------------ */
 #include "usbd_usr.h"
 
-/** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
-* @{
-*/
-
-/** @defgroup USBD_USR
-* @brief    This file includes the user application layer
-* @{
-*/
-
-/** @defgroup USBD_USR_Private_TypesDefinitions
-* @{
-*/
-/**
-* @}
-*/
-
-
-/** @defgroup USBD_USR_Private_Defines
-* @{
-*/
-/**
-* @}
-*/
-
-
-/** @defgroup USBD_USR_Private_Macros
-* @{
-*/
-/**
-* @}
-*/
-
-
-/** @defgroup USBD_USR_Private_Variables
-* @{
-*/
-
 USBD_Usr_cb_TypeDef USR_cb =
 {
     USBD_USR_Init,
@@ -71,32 +34,6 @@ USBD_Usr_cb_TypeDef USR_cb =
     USBD_USR_DeviceConnected,
     USBD_USR_DeviceDisconnected,
 };
-
-/**
-* @}
-*/
-
-/** @defgroup USBD_USR_Private_Constants
-* @{
-*/
-
-/**
-* @}
-*/
-
-
-
-/** @defgroup USBD_USR_Private_FunctionPrototypes
-* @{
-*/
-/**
-* @}
-*/
-
-
-/** @defgroup USBD_USR_Private_Functions
-* @{
-*/
 
 /**
 * @brief  USBD_USR_Init
